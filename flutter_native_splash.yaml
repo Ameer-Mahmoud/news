@@ -1,0 +1,10 @@
+flutter_native_splash:
+
+  color: "#FFFFFF"
+
+
+  image: assets/images/news.png
+
+
+  android_12:
+    image: assets/images/news.png
