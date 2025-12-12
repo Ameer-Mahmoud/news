@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/remote/network/ApiManager.dart';
@@ -5,6 +6,8 @@ import '../../model/Articles/Article.dart';
 import '../articles/ArticleItem.dart';
 
 class SearchScreen extends StatefulWidget {
+  const SearchScreen({super.key});
+
   @override
   State<SearchScreen> createState() => _SearchScreenState();
 }
@@ -30,7 +33,9 @@ class _SearchScreenState extends State<SearchScreen> {
         results = response.articles ?? [];
       });
     } catch (e) {
-      print("Search error: $e");
+      if (kDebugMode) {
+        print("Search error: $e");
+      }
     }
 
     setState(() {

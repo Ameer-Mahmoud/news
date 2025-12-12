@@ -10,7 +10,7 @@ import 'ArticleDetails.dart';
 class Articleitem extends StatelessWidget {
 
   final Article article;
-  const Articleitem({required this.article});
+  const Articleitem({super.key, required this.article});
   String _safeFormatDate(String? date) {
     try {
       return timeago.format(DateTime.parse(date ?? ""));

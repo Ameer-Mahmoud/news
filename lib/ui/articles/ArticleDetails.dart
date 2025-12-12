@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 class ArticleDetails extends StatelessWidget {
   final Article article;
 
-  const ArticleDetails({required this.article});
+  const ArticleDetails({super.key, required this.article});
 
   @override
   Widget build(BuildContext context) {

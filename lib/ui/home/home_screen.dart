@@ -3,8 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:news/core/resources/AssetsManager.dart';
 import 'package:news/core/resources/ColorManager.dart';
-import 'package:news/ui/articles/ArticlesList.dart';
-import 'package:news/ui/articles/ArticlesWidget.dart';
+import 'package:news/ui/articles/articlesWidget/ArticlesWidget.dart';
 import 'package:news/ui/categories/widgets/categoriesWidgets.dart';
 import 'package:news/ui/home/widgets/homeDrawer.dart';
 
