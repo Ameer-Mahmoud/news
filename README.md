@@ -22,11 +22,13 @@ A modern Flutter news application for browsing headlines, exploring categories, 
 ## 🛠 Tech Stack
 - Flutter
 - Dart
+- MVVM Architecture
 - REST API (News API)
 - Dio / http
 - Provider (State Management)
 - SharedPreferences
 - CachedNetworkImage
+
 
 ## 📂 Folder Structure
 lib/
