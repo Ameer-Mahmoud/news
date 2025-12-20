@@ -1,92 +1,102 @@
-📰 Newsly – Flutter News App  
-Newsly is a modern Flutter news application for browsing the latest headlines, exploring categories, searching for articles, and reading full news details. The app is built with clean architecture, smooth UI/UX, and full support for Light & Dark modes.
+# 📰 News App (Flutter)
 
-✨ Features  
-🎨 Modern UI/UX  
-Clean and minimal interface with responsive layouts  
-Light & Dark Mode support  
-Smooth navigation and animations  
+A modern Flutter news application for browsing headlines, exploring categories, searching articles, and reading full news details — built with clean UI/UX and full **Light & Dark Mode** support.
 
-🗞 News Experience  
-Latest news feed (Top Headlines)  
-Browse news by categories (Business, Sports, Technology, Health, etc.)  
-Article details screen with full content  
-Pull-to-refresh support  
+---
 
-🔍 Search  
-Search news articles by keywords  
-Fast and responsive results  
+## ✨ Features
 
-⭐ Favorites / Bookmarks  
-Save and remove articles from favorites  
-Local persistence using SharedPreferences  
-Instant UI updates  
+### 🎨 UI / UX
+- Clean and modern interface
+- Fully responsive layouts
+- Light & Dark Mode
 
-🌍 Localization  
-English & Arabic language support  
-Local saving of selected language and theme  
+### 🗞 News
+- Latest headlines feed
+- Browse news by categories
+- Article details screen
+- Pull-to-refresh support
 
-🛠 Technologies Used  
-Flutter – UI & Application Logic  
-Dart – Programming Language  
-REST API (News API) – Fetching news data  
-Dio / http – API requests  
-Provider – State Management  
-SharedPreferences – Local storage (theme, language, favorites)  
-CachedNetworkImage – Image caching and performance  
+### 🔍 Search
+- Search articles by keywords
+- Fast and smooth results
 
-📌 API Configuration  
+### ⭐ Favorites / Bookmarks
+- Save and remove articles
+- Local persistence using SharedPreferences
+- Instant UI updates
+
+### 🌍 Localization
+- English & Arabic support
+- Save selected language locally
+
+---
+
+## 🛠 Tech Stack
+
+- Flutter
+- Dart
+- REST API (News API)
+- Dio / http
+- Provider (State Management)
+- SharedPreferences
+- CachedNetworkImage
+
+---
+
+## 📂 Folder Structure
+
+lib/
+├── core/
+│ ├── constants/
+│ ├── helpers/
+│ ├── theme/
+│ ├── reusable_components/
+│ └── services/
+├── data/
+│ ├── models/
+│ └── sources/
+├── providers/
+├── ui/
+│ ├── home/
+│ ├── category/
+│ ├── search/
+│ ├── details/
+│ ├── settings/
+│ └── splash/
+└── main.dart
+
+---
+
+## 🔑 API Setup
+
 This project uses a public News API.  
-Add your API key in a constants file or `.env`.  
-Do not commit API keys to GitHub.  
+Add your API key and **do not push it to GitHub**.
 
-📂 Folder Structure  
-lib/  
- ├── core/  
- │    ├── constants/  
- │    ├── helpers/  
- │    ├── theme/  
- │    ├── reusable_components/  
- │    └── services/  
- ├── data/  
- │    ├── models/  
- │    └── sources/  
- ├── providers/  
- ├── ui/  
- │    ├── home/  
- │    ├── category/  
- │    ├── search/  
- │    ├── details/  
- │    ├── settings/  
- │    └── splash/  
- └── main.dart  
+Create the following file:
 
-🚀 Getting Started  
-1️⃣ Install dependencies  
-flutter pub get  
+`lib/core/constants/api_keys.dart`
 
-2️⃣ Add API Key  
-Create `lib/core/constants/api_keys.dart` and add:  
-const String newsApiKey = "YOUR_API_KEY";  
+```dart
+const String newsApiKey = "YOUR_API_KEY";
+🚀 Getting Started
+1) Install dependencies
+bash
 
-3️⃣ Run the app  
-flutter run  
+flutter pub get
+2) Run the app
+bash
 
+flutter run
 📸 Screenshots
 
-| | | |
-|---|---|---|
-| ![](assets/screenshots/1.png) | ![](assets/screenshots/2.png) | ![](assets/screenshots/3.png) |
-| ![](assets/screenshots/4.png) | ![](assets/screenshots/5.png) | ![](assets/screenshots/6.png) |
+👨‍💻 Developer
+Ameer Mahmoud
+Flutter Developer | UI/UX Designer
+GitHub: https://github.com/Ameer-Mahmoud
 
+⭐ Support
+If you like this project, please give it a ⭐ star on GitHub!
 
-👨‍💻 Developer  
-Ameer Mahmoud  
-Flutter Developer | UI/UX Designer  
-GitHub: https://github.com/Ameer-Mahmoud  
-
-⭐ Support the Project  
-If you like this project, please give it a ⭐ star on GitHub!  
-
-📄 License  
+📄 License
 This project is open-source and free for educational use.
