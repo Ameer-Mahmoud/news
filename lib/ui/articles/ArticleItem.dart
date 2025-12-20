@@ -26,6 +26,7 @@ class Articleitem extends StatelessWidget {
         showModalBottomSheet(
             context: context,
             isScrollControlled: true,
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
         ),
@@ -35,7 +36,7 @@ class Articleitem extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(12.r),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(20.r),
           boxShadow: [
             BoxShadow(
@@ -45,7 +46,7 @@ class Articleitem extends StatelessWidget {
             ),
           ],
           border: Border.all(
-            color: ColorManager.lightPrimaryColor.withOpacity(0.3),
+            color: Theme.of(context).dividerColor.withOpacity(0.3),
             width: 1,
           ),
         ),
@@ -64,7 +65,7 @@ class Articleitem extends StatelessWidget {
                 placeholder: (context, url) =>
                     Center(child: CircularProgressIndicator()),
                 errorWidget: (context, url, error) =>
-                    Center(child: Icon(Icons.error, size: 30.sp)),
+                    Center(child: Icon(Icons.error, size: 30.sp, color: Theme.of(context).iconTheme.color)),
               ),
             ),
 
@@ -75,11 +76,8 @@ class Articleitem extends StatelessWidget {
               article.title ?? "",
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: 17.sp,
-                fontWeight: FontWeight.w800,
-                height: 1.3,
-                color: Colors.black87,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                height: 1.3
               ),
             ),
 
@@ -93,24 +91,18 @@ class Articleitem extends StatelessWidget {
                     "By: ${article.author ?? "Unknown"}",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                      color: Colors.grey[600],
-                    ),
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 12.sp),
                   ),
                 ),
 
                 SizedBox(width: 8.w),
 
-                Icon(Icons.access_time, size: 14.sp, color: Colors.grey),
+                Icon(Icons.access_time, size: 14.sp, color: Theme.of(context).iconTheme.color?.withOpacity(0.7)),
                 SizedBox(width: 4.w),
 
                 Text(
                   _safeFormatDate(article.publishedAt),
-                  style: TextStyle(
-                    fontSize: 12.sp,
-                    color: Colors.grey[600],
-                  ),
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 12.sp),
                 ),
               ],
             ),

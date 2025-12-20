@@ -56,12 +56,23 @@ class _SearchScreenState extends State<SearchScreen> {
 
             TextField(
               controller: controller,
+              style: Theme.of(context).textTheme.bodyMedium,
               decoration: InputDecoration(
                 hintText: "Search for news...",
-                prefixIcon: Icon(Icons.search),
+                hintStyle: TextStyle(color: Theme.of(context).disabledColor),
+                prefixIcon: Icon(Icons.search, color: Theme.of(context).iconTheme.color),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12.r),
+                  borderSide: BorderSide(color: Theme.of(context).dividerColor)
                 ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12.r),
+                  borderSide: BorderSide(color: Theme.of(context).dividerColor) 
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12.r),
+                  borderSide: BorderSide(color: Theme.of(context).primaryColor)
+                )
               ),
               onSubmitted: search,
             ),
@@ -80,7 +91,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: Center(
                   child: Text(
                     "Search for anything...",
-                    style: TextStyle(color: Colors.grey),
+                    style: TextStyle(color: Theme.of(context).disabledColor),
                   ),
                 ),
               ),
@@ -90,7 +101,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: Center(
                   child: Text(
                     "No results found",
-                    style: TextStyle(color: Colors.grey),
+                    style: TextStyle(color: Theme.of(context).disabledColor),
                   ),
                 ),
               ),

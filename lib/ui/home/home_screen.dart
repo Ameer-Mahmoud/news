@@ -27,11 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
         scrolledUnderElevation: 0,
         centerTitle: true,
         title: Text(selectedCategory== null? "Home":selectedCategory!,style:
-          TextStyle(
-            fontSize: 20.sp,
-            fontWeight: FontWeight.w500,
-            color: ColorManager.lightPrimaryColor
-          ),),
+          Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 20.sp)
+        ,),
         actions: [IconButton(onPressed: (){
           Navigator.push(
             context,
@@ -40,7 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
         },
             icon: SvgPicture.asset(AssetsManager.search,
             height: 24.h,
-            width: 24.w,)
+            width: 24.w,
+            colorFilter: ColorFilter.mode(Theme.of(context).iconTheme.color!, BlendMode.srcIn),
+            )
         )
         ],
 

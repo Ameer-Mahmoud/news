@@ -36,9 +36,10 @@ class ArticleDetails extends StatelessWidget {
 
           SizedBox(height: 20.h),
 
+
           Text(
             article.title ?? "",
-            style: TextStyle(
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontSize: 18.sp,
               fontWeight: FontWeight.bold,
             ),
@@ -47,9 +48,8 @@ class ArticleDetails extends StatelessWidget {
 
           Text(
             article.description ?? "",
-            style: TextStyle(
-              fontSize: 14.sp,
-              color: Colors.grey[700],
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              fontSize: 14.sp
             ),
           ),
 
@@ -59,6 +59,8 @@ class ArticleDetails extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).primaryColor,
+                foregroundColor: Theme.of(context).colorScheme.onPrimary,
                 padding: EdgeInsets.symmetric(vertical: 16.h),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24.r)),

@@ -16,11 +16,8 @@ class Categorieswidgets extends StatelessWidget {
       child: Column(
         
         children: [
-          Text(StringsManager.welcome,style: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 24.sp,
-            color: ColorManager.lightPrimaryColor
-          ),),
+          Text(StringsManager.welcome,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 24.sp, fontWeight: FontWeight.w500),
+          ),
           SizedBox(height: 20.h,),
           Expanded(
             child: ListView.separated(

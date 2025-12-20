@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news/core/provider/ThemeProvider.dart';
+import 'package:news/core/resources/AppStyle.dart'; // Ensure AppStyle is imported
 import 'package:news/ui/home/home_screen.dart';
 import 'package:news/ui/search/search_screen.dart';
+import 'package:provider/provider.dart';
 
 import 'core/resources/RoutesManager.dart';
 
@@ -10,7 +13,12 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
 
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,6 +26,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var themeProvider = Provider.of<ThemeProvider>(context); // Get provider
     return ScreenUtilInit(
       designSize: const Size(393, 852),
       minTextAdapt: true,
@@ -26,11 +35,9 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'news app',
-          theme: ThemeData(
-
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
-          ),
+          theme: AppStyle.lightTheme, 
+          darkTheme: AppStyle.darkTheme, 
+          themeMode: themeProvider.themeMode, 
           initialRoute: RoutesManager.home,
           routes: {
             RoutesManager.home:(_)=>HomeScreen(),

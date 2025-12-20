@@ -22,12 +22,12 @@ class _ArticleswidgetState extends State<Articleswidget> {
       child: Consumer<ArticlesViewmodel>(
           builder: (context, viewModel, child) {
             if (viewModel.isLoading) {
-              return Center(child: CircularProgressIndicator(),);
+              return Center(child: CircularProgressIndicator());
             }
             if (viewModel.errorMessage != null) {
               return Column(
                 children: [
-                  Text(viewModel.errorMessage ?? ""),
+                  Text(viewModel.errorMessage ?? "", style: Theme.of(context).textTheme.bodyMedium),
                   ElevatedButton(onPressed: () {
                     viewModel.fetchSources(widget.category);
                   }, child: Text("Try Again"))
@@ -44,19 +44,20 @@ class _ArticleswidgetState extends State<Articleswidget> {
                     TabBar(
                       isScrollable: true,
                       dividerHeight: 0,
-                      indicatorColor: ColorManager.lightPrimaryColor,
+                      indicatorColor: Theme.of(context).primaryColor,
                       indicatorSize: TabBarIndicatorSize.tab,
                       tabAlignment: TabAlignment.center,
                       unselectedLabelStyle: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 14.sp,
-                          color: ColorManager.lightPrimaryColor
+                          color: Theme.of(context).primaryColor
                       ),
                       labelStyle: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 16.sp,
-                          color: ColorManager.lightPrimaryColor
+                          color: Theme.of(context).primaryColor
                       ),
+                      labelColor: Theme.of(context).primaryColor,
 
                       tabs:
                       sourcesList.map((source) => Tab(text: source.name))
